@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import SplitText from '@/components/ui/SplitText/SplitText';
 import { Nav } from '@/components/Nav';
 import { fadeIn } from '@/variants';
@@ -10,7 +10,9 @@ import { FaArrowRight, FaRegPaperPlane } from 'react-icons/fa';
 import Industries from '@/components/Industries';
 
 export default function Home() {
-  const fadeInUp = {
+  type AnimationVariant = Variants;
+
+  const fadeInUp: AnimationVariant = {
     hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
@@ -19,7 +21,7 @@ export default function Home() {
     },
   };
 
-  const staggerContainer = {
+  const staggerContainer: AnimationVariant = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,7 +32,7 @@ export default function Home() {
     },
   };
 
-  const slideInFromRight = {
+  const slideInFromRight: AnimationVariant = {
     hidden: { opacity: 0, x: 100 },
     visible: {
       opacity: 1,
@@ -39,7 +41,7 @@ export default function Home() {
     },
   };
 
-  const scaleIn = {
+  const scaleIn: AnimationVariant = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
