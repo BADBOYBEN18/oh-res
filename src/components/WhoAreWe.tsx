@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import {
   FaSlidersH,
@@ -5,10 +6,12 @@ import {
   FaRobot,
   FaExchangeAlt,
 } from 'react-icons/fa';
+import { scaleIn } from './variants';
 const WhoAreWe = () => {
   return (
     <>
-      <div
+      <motion.div
+        variants={scaleIn}
         className="max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden  md:my-2 cursor-pointer flex flex-col text-center items-center justify-center sm:h-full py-10 px-4  
   hover:-translate-y-[2rem]
   hover:shadow-[0_0_15px_rgba(109,253,131,0.5)]
@@ -26,8 +29,9 @@ const WhoAreWe = () => {
             automated business communications.
           </p>
         </div>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        variants={scaleIn}
         className="max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden  md:my-2 cursor-pointer flex flex-col text-center items-center justify-center sm:h-full py-10 px-4   hover:-translate-y-[2rem]
   hover:shadow-[0_0_15px_rgba(109,253,131,0.5)]
   transition-all duration-300"
@@ -42,8 +46,9 @@ const WhoAreWe = () => {
             powerful, scalable EDI infrastructures that simplify growth.
           </p>
         </div>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        variants={scaleIn}
         className="max-w-full mx-auto bg-white rounded-lg shadow-lg overflow-hidden  md:my-2 cursor-pointer flex flex-col text-center items-center justify-center sm:h-full py-10 px-4   hover:-translate-y-[2rem]
   hover:shadow-[0_0_15px_rgba(109,253,131,0.5)]
   transition-all duration-300"
@@ -60,7 +65,7 @@ const WhoAreWe = () => {
             real-time data exchange.
           </p>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

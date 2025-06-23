@@ -26,11 +26,11 @@ export const Nav = () => {
 
   return (
     <>
-      <motion.nav
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className=" shadow-sm bg-primary lg:backdrop-blur-lg  sticky top-0 z-50 py-1 md:py-2 lg:py-4"
+        className=" shadow-sm bg-primary lg:backdrop-blur-lg  fixed w-full top-0 z-50 py-1 md:py-2 lg:py-4  "
       >
         {/* Mobile Nav with Animation */}
         <MobileNav handleOpen={handleOpen} isOpen={open} />
@@ -47,7 +47,7 @@ export const Nav = () => {
               {/* Desktop Navigation Links */}
               <Link
                 href="/"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all  duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all  duration-300"
               >
                 <p
                   className={` ${
@@ -60,7 +60,7 @@ export const Nav = () => {
 
               <Link
                 href="/about"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all duration-300"
               >
                 {/* <MdGroups2
                   className={`text-lg ${
@@ -78,7 +78,7 @@ export const Nav = () => {
 
               <Link
                 href="/services"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all duration-300"
               >
                 {/* <FaCog
                   className={`${path === '/services' ? 'text-maingreen' : ''}`}
@@ -94,7 +94,7 @@ export const Nav = () => {
 
               <Link
                 href="/contact"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all duration-300"
               >
                 {/* <IoIosMail
                   className={`text-lg ${
@@ -111,7 +111,7 @@ export const Nav = () => {
               </Link>
               <Link
                 href="/contact"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all duration-300"
               >
                 {/* <IoIosMail
                   className={`text-lg ${
@@ -128,7 +128,7 @@ export const Nav = () => {
               </Link>
               <Link
                 href="/contact"
-                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen transition-all duration-300"
+                className="flex items-center gap-2 text-white text-[16px] hover:text-maingreen hover:-translate-y-2 transition-all duration-300"
               >
                 {/* <IoIosMail
                   className={`text-lg ${
@@ -155,7 +155,7 @@ export const Nav = () => {
             </div>
           </div>
         </div>
-      </motion.nav>
+      </motion.div>
     </>
   );
 };

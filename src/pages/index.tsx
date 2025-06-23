@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import SplitText from '@/components/ui/SplitText/SplitText';
 import { Nav } from '@/components/Nav';
 // import { fadeIn } from '@/variants';
@@ -8,53 +8,58 @@ import Strengths from '@/components/Strengths';
 import WhoAreWe from '@/components/WhoAreWe';
 import { FaArrowRight, FaRegPaperPlane } from 'react-icons/fa';
 import Industries from '@/components/Industries';
-
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInFromRight,
+  scaleIn,
+} from '@/variants/index';
 export default function Home() {
-  type AnimationVariant = Variants;
+  // type AnimationVariant = Variants;
 
-  const fadeInUp: AnimationVariant = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  };
+  // const fadeInUp: AnimationVariant = {
+  //   hidden: { opacity: 0, y: 60 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.6, ease: 'easeOut' },
+  //   },
+  // };
 
-  const staggerContainer: AnimationVariant = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
-      },
-    },
-  };
+  // const staggerContainer: AnimationVariant = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.1,
+  //       delayChildren: 0.3,
+  //     },
+  //   },
+  // };
 
-  const slideInFromRight: AnimationVariant = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
-  };
+  // const slideInFromRight: AnimationVariant = {
+  //   hidden: { opacity: 0, x: 100 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { duration: 0.8, ease: 'easeOut' },
+  //   },
+  // };
 
-  const scaleIn: AnimationVariant = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
-    },
-  };
+  // const scaleIn: AnimationVariant = {
+  //   hidden: { opacity: 0, scale: 0.8 },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: { duration: 0.5, ease: 'easeOut' },
+  //   },
+  // };
 
   return (
     <div>
       <Nav />
-      <main className="bg-secondary  md:py-5  flex justify-center  px-4 md:px-8 lg:mb-10">
-        <div className="flex flex-col md:flex-row items-center scale-98 max-w-7xl m-auto py-10 lg:py-0">
+      <main className="bg-secondary  flex justify-center  px-4 md:px-8 lg:mb-10 pt-20 lg:pt-0 ">
+        <div className="flex flex-col md:flex-row items-center scale-98 max-w-7xl m-auto py-10 ">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -75,9 +80,6 @@ export default function Home() {
               textAlign="left"
               // onLetterAnimationComplete={handleAnimationComplete}
             />
-            {/* <h1 className="text-maingreen text-3xl lg:text-5xl font-bold">
-              Empowering SMEs With Smart EDI Automation
-            </h1> */}
             <motion.p
               variants={fadeInUp}
               className="text-white text-[16px] lg:text-lg font-extralight "
@@ -106,37 +108,65 @@ export default function Home() {
 
       <section className="md:py-5 px-4 md:px-8 mb-5 lg:mb-10">
         <div className="scale-98 max-w-7xl m-auto py-10">
-          <div className="mb-10 md:mb-16">
-            <h1
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="mb-10 md:mb-16"
+          >
+            <motion.h1
+              variants={fadeInUp}
               className="text-[#198754] text-lg md:text-xl mb-2
             "
             >
               OUR CORE STRENGTHS
-            </h1>
-            <h2 className="text-maingreen text-2xl md:text-3xl font-bold">
+            </motion.h1>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-maingreen text-2xl md:text-3xl font-bold"
+            >
               Designed for Scalability,{' '}
               <span className="text-secondary">Security</span>, and Simplicity
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Strengths />
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className=" px-4 md:px-8 py-10">
+      <section className=" px-4 md:px-8 py-10 mb-5 md:mb-10">
         <div className="scale-98 max-w-7xl m-auto ">
-          <div className="space-y-4 text-center mb-7 lg:mb-20">
-            <div className="border-2 border-maingreen max-w-20 mb-4 rounded-2xl m-auto"></div>
-            <h2 className="text-[#198754] text-xl md:text-2xl font-medium">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="space-y-4 text-center mb-7 lg:mb-20"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="border-2 border-maingreen max-w-20 mb-4 rounded-2xl m-auto"
+            ></motion.div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-[#198754] text-xl md:text-2xl font-medium"
+            >
               WHO WE ARE
-            </h2>
-            <h1 className="text-maingreen font-bold text-xl md:text-2xl lg:text-3xl lg:mb-7">
+            </motion.h2>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-maingreen font-bold text-xl md:text-2xl lg:text-3xl lg:mb-7"
+            >
               Modernizing <span className="text-secondary">EDI</span> for
               Growing Businesses
-            </h1>
-            <p className="font-light text-lg max-w-4xl m-auto md:text-xl ">
+            </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="font-light text-lg max-w-4xl m-auto md:text-xl "
+            >
               At OH-RES, we deliver{' '}
               <span className="text-maingreen font-semibold">
                 impact-driven EDI solutions
@@ -147,17 +177,27 @@ export default function Home() {
               and{' '}
               <span className="text-maingreen font-semibold">scalability</span>,
               we help companies thrive in today’s fast-paced digital space.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
             <WhoAreWe />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section className="px-4 md:px-8 py-10">
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeInUp}
           className="flex flex-col  md:gap-7 lg:gap-10 md:flex-row space-y-10 max-w-7xl m-auto scale-98
         "
         >
@@ -171,6 +211,7 @@ export default function Home() {
               alt=""
             />
           </div>
+
           <div
             className="md:w-1/2
           "
@@ -195,7 +236,7 @@ export default function Home() {
               className="flex-row-reverse"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="bg-secondary my-10 py-5">
