@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import SplitText from '@/components/ui/SplitText/SplitText';
 import { Nav } from '@/components/Nav';
-import { fadeIn } from '@/variants';
+// import { fadeIn } from '@/variants';
 import AnimatedButton from '@/components/Button';
 import Strengths from '@/components/Strengths';
 import WhoAreWe from '@/components/WhoAreWe';
