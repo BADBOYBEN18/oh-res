@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 import { FaArrowRight } from 'react-icons/fa';
-
+import GlareHover from '@/components/ui/GlareHover/GlareHover';
 type AnimatedButtonProps = {
   text: string;
   icon?: IconType | React.ReactNode; // Accepts either React Icon component or any React node

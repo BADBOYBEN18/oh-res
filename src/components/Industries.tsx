@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import {
   FaCogs,
@@ -7,6 +8,7 @@ import {
   FaUniversity,
 } from 'react-icons/fa';
 import { FaHeartPulse } from 'react-icons/fa6';
+import { scaleIn, staggerContainer } from './variants';
 
 type IndustriesCardProps = {
   title: string;
@@ -63,11 +65,19 @@ const IndustriesCard: IndustriesCardProps[] = [
 
 const Industries = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {IndustriesCard.map(({ icon, description, title, img }) => (
-        <div
-          key={title}
-          className=" bg-secondary p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 text-center space-y-6"
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+      variants={staggerContainer}
+      className="grid grid-cols-1 md:grid-cols-3 gap-4"
+    >
+      {IndustriesCard.map(({ icon, description, title, img }, index) => (
+        <motion.div
+          key={index}
+          variants={scaleIn}
+          whileHover={{ scale: 1.05, y: -5 }}
+          className=" bg-secondary p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 text-center space-y-6 cursor-pointer"
         >
           <div className="text-white">
             <div className="mb-3 text-[2rem] flex justify-center">{icon}</div>
@@ -77,9 +87,9 @@ const Industries = () => {
           <div>
             <img className="rounded-lg scale-98" src={img} alt="" />
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

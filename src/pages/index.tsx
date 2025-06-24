@@ -6,7 +6,15 @@ import { Nav } from '@/components/Nav';
 import AnimatedButton from '@/components/Button';
 import Strengths from '@/components/Strengths';
 import WhoAreWe from '@/components/WhoAreWe';
-import { FaArrowRight, FaRegPaperPlane } from 'react-icons/fa';
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaFileAlt,
+  FaLock,
+  FaNetworkWired,
+  FaRegPaperPlane,
+  FaSyncAlt,
+} from 'react-icons/fa';
 import Industries from '@/components/Industries';
 import {
   fadeInUp,
@@ -14,6 +22,7 @@ import {
   slideInFromRight,
   scaleIn,
 } from '@/variants/index';
+import { Footer } from '@/components/Footer';
 export default function Home() {
   // type AnimationVariant = Variants;
 
@@ -56,7 +65,7 @@ export default function Home() {
   // };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Nav />
       <main className="bg-secondary  flex justify-center  px-4 md:px-8 lg:mb-10 pt-20 lg:pt-0 ">
         <div className="flex flex-col md:flex-row items-center scale-98 max-w-7xl m-auto py-10 ">
@@ -239,43 +248,158 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="bg-secondary my-10 py-5">
+      <section className="bg-secondary md:my-10 py-5 ">
         <div className=" max-w-7xl m-auto px-4 md:px-8 py-10  flex flex-col lg:flex-row items-center justify-between text-center">
-          <p
+          <SplitText
+            text="Ready to simplify your business with smart EDI solutions?"
+            className="text-white text-2xl font-bold mb-5 lg:mb-0"
+            delay={80}
+            duration={0.1}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="left"
+            // onLetterAnimationComplete={handleAnimationComplete}
+          />
+          {/* <p
             className="text-white text-2xl font-bold mb-5 lg:mb-0
           "
           >
             Ready to simplify your business with smart EDI solutions?
-          </p>
-          <AnimatedButton
-            text={'Talk to Us'}
-            icon={FaRegPaperPlane}
-            iconPosition="left"
-            className="px-7 "
-          />
+          </p> */}
+          <div>
+            <AnimatedButton
+              text={'Talk to Us'}
+              icon={FaRegPaperPlane}
+              iconPosition="left"
+              className="px-7 "
+            />
+          </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-8 py-10">
+      <section className="px-4 md:px-8 py-10 ">
         <div className="max-w-7xl m-auto scale-98">
-          <div className="text-center space-y-2 mb-10">
-            <h1 className="text-[#2a9061] uppercase text-xl font-semibold md:text-2xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerContainer}
+            className="text-center space-y-2 mb-10 lg:mb-20"
+          >
+            <motion.h1
+              variants={fadeInUp}
+              className="text-[#2a9061] uppercase text-xl font-semibold md:text-2xl"
+            >
               Industries We Serve
-            </h1>
-            <h2 className="text-maingreen text-xl font-bold md:text-3xl">
+            </motion.h1>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-maingreen text-xl font-bold md:text-3xl"
+            >
               Smart EDI for Every Industry
-            </h2>
-            <p className="sm:text-lg">
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="sm:text-lg">
               From supply chains to hospitals, our platform powers seamless
               communication between systems.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div>
+          <div className="">
             <Industries />
           </div>
         </div>
       </section>
+
+      {/* how it works */}
+      <section className="px-4 md:px-8 py-10 md:py-16 lg:py-20 bg-[#f0f8f5]">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10 max-w-7xl m-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={slideInFromRight}
+            className="md:w-1/2"
+          >
+            <h1 className="text-[#198754] font-semibold text-lg md:text-xl mb-2">
+              HOW IT WORKS
+            </h1>
+            <h2 className="font-bold  text-xl md:text-3xl lg:text-3xl mb-4 md:mb-10">
+              A Simple, Streamlined EDI Process
+            </h2>
+
+            <div className="space-y-4 md:space-y-10">
+              <div className="flex gap-5">
+                <div className=" bg-[#198754] rounded-full w-10 h-10 lg:w-14 lg:h-14 lg:p-5 flex p-4 items-center justify-center mb-3 ">
+                  <FaFileAlt className="text-white text-lg md:text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    1. Document Preparation
+                  </h3>
+                  <p className="text-base md:text-lg">
+                    Business documents are converted to EDI-ready format for
+                    seamless processing.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div className=" bg-[#198754] rounded-full w-10 h-10 lg:w-14 lg:h-14 lg:p-5 flex p-4 items-center justify-center mb-3 ">
+                  <FaLock className="text-white text-lg md:text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    2. Secure Transmission
+                  </h3>
+                  <p className="text-base md:text-lg">
+                    Files are encrypted and securely sent through trusted
+                    communication channels.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-5">
+                <div className=" bg-[#198754] rounded-full w-10 h-10 lg:w-14 lg:h-14 lg:p-5 flex p-4 items-center justify-center mb-3 ">
+                  <FaSyncAlt className="text-white text-lg md:text-xl " />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    3. Integration
+                  </h3>
+                  <p className="text-base md:text-lg">
+                    The data is automatically routed into your internal systems
+                    (ERP, CRM, etc).
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-5">
+                <div className=" bg-[#198754] rounded-full w-10 h-10 lg:w-14 lg:h-14 lg:p-5 flex p-4 items-center justify-center mb-3 ">
+                  <FaCheckCircle className="text-white text-lg md:text-xl" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    4. Confirmation
+                  </h3>
+                  <p className="text-base md:text-lg">
+                    Acknowledgments or response files are sent back
+                    automatically.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="md:w-1/2">
+            <img src="...." alt="img" />
+          </div>
+        </div>
+      </section>
+
+      <Footer year={2025} />
     </div>
   );
 

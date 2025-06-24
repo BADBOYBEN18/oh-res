@@ -30,13 +30,8 @@ const MobileNav = ({ handleOpen, isOpen }: MobileNavProps) => {
       {/* Close Button and Logo */}
       <div className="flex justify-between mb-[2rem]">
         <Link href="/">
-          <div className="">
-            {/* <img
-              src="https://ik.imagekit.io/h6pmd5ivo/century%201/CENTURY1LOGO.svg?updatedAt=1742072488748"
-              width={110}
-              height={110}
-              alt="Century1 Limited"
-            /> */}
+          <div className=" text-xl lg:text-2xl font-bold text-[#198754] ">
+            OH-RES
           </div>
         </Link>
         <button onClick={handleOpen}>
