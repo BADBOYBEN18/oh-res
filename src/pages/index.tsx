@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <Nav />
-      <main className="bg-secondary  flex justify-center  px-4 md:px-8 lg:mb-10 pt-20 lg:pt-0 ">
+      <main className="bg-secondary  flex justify-center  px-4 md:px-8 lg:mb-10 pt-20 xl:pt-15 ">
         <div className="flex flex-col md:flex-row items-center scale-98 max-w-7xl m-auto py-10 ">
           <motion.div
             initial="hidden"
@@ -76,8 +76,16 @@ export default function Home() {
             className="space-y-7"
           >
             <SplitText
-              text="Empowering SMEs With Smart EDI Automation"
-              className="text-maingreen text-3xl lg:text-5xl font-bold"
+              text={
+                <>
+                  Empowering SMEs With{' '}
+                  <span className="smart-word inline lg:inline-block lg:[&::first-letter]:block lg:[&::first-letter]:-mb-[0.5em]">
+                    Smart
+                  </span>{' '}
+                  EDI Automation
+                </>
+              }
+              className="text-maingreen text-3xl lg:text-4xl xl:text-5xl font-bold text-nowrap"
               delay={80}
               duration={0.6}
               ease="power3.out"
@@ -89,6 +97,25 @@ export default function Home() {
               textAlign="left"
               // onLetterAnimationComplete={handleAnimationComplete}
             />
+            {/* <SplitText
+              text={
+                <>
+                  Empowering SMEs With
+                  <br className="hidden lg:block" />
+                  Smart EDI Automation
+                </>
+              }
+              className="text-maingreen text-3xl lg:text-5xl font-bold"
+              delay={80}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
+            /> */}
             <motion.p
               variants={fadeInUp}
               className="text-white text-[16px] lg:text-lg font-extralight "
@@ -115,7 +142,7 @@ export default function Home() {
         </div>
       </main>
 
-      <section className="md:py-5 px-4 md:px-8 mb-5 lg:mb-10">
+      <section className="md:py-5  px-4 md:px-8 mb-5 lg:mb-10">
         <div className="scale-98 max-w-7xl m-auto py-10">
           <motion.div
             initial="hidden"
