@@ -76,16 +76,7 @@ export default function Home() {
             className="space-y-7"
           >
             <SplitText
-              text={
-                <>
-                  Empowering SMEs With{' '}
-                  <span className="smart-word inline lg:inline-block lg:[&::first-letter]:block lg:[&::first-letter]:-mb-[0.5em]">
-                    Smart
-                  </span>{' '}
-                  EDI Automation
-                </>
-              }
-              className="text-maingreen text-3xl lg:text-4xl xl:text-5xl font-bold text-nowrap"
+              className="text-maingreen text-3xl lg:text-4xl xl:text-5xl font-bold"
               delay={80}
               duration={0.6}
               ease="power3.out"
@@ -95,8 +86,13 @@ export default function Home() {
               threshold={0.1}
               rootMargin="-100px"
               textAlign="left"
-              // onLetterAnimationComplete={handleAnimationComplete}
-            />
+            >
+              Empowering SMEs With{' '}
+              <span className="inline lg:inline-block lg:[&::first-letter]:block lg:[&::first-letter]:-mb-2">
+                Smart
+              </span>{' '}
+              EDI Automation
+            </SplitText>
             {/* <SplitText
               text={
                 <>
@@ -278,7 +274,6 @@ export default function Home() {
       <section className="bg-secondary md:my-10 py-5 ">
         <div className=" max-w-7xl m-auto px-4 md:px-8 py-10  flex flex-col lg:flex-row items-center justify-between text-center">
           <SplitText
-            text="Ready to simplify your business with smart EDI solutions?"
             className="text-white text-2xl font-bold mb-5 lg:mb-0"
             delay={80}
             duration={0.1}
@@ -290,7 +285,9 @@ export default function Home() {
             rootMargin="-100px"
             textAlign="left"
             // onLetterAnimationComplete={handleAnimationComplete}
-          />
+          >
+            Ready to simplify your business with smart EDI solutions?
+          </SplitText>
           {/* <p
             className="text-white text-2xl font-bold mb-5 lg:mb-0
           "
@@ -429,21 +426,4 @@ export default function Home() {
       <Footer year={2025} />
     </div>
   );
-
-  {
-    <SplitText
-      text="Hello, GSAP!"
-      className="text-2xl font-semibold text-center"
-      delay={100}
-      duration={0.6}
-      ease="power3.out"
-      splitType="chars"
-      from={{ opacity: 0, y: 40 }}
-      to={{ opacity: 1, y: 0 }}
-      threshold={0.1}
-      rootMargin="-100px"
-      textAlign="center"
-      // onLetterAnimationComplete={handleAnimationComplete}
-    />;
-  }
 }
